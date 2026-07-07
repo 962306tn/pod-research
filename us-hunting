@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light" style="--rec-label: '★ Đề xuất'">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>00 — Tổng Quan & So Sánh 4 Thị Trường Motorcycle POD Châu Âu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       TOKENS
+       ============================================================ */
+    :root {
+      --bg: #FAFAF7;
+      --surface: #FFFFFF;
+      --surface-2: #F5F5F0;
+      --surface-3: #EFEEE8;
+      --text: #1A1A1A;
+      --text-muted: #4A4A45;
+      --text-subtle: #6B6B66;
+      --accent: #D97757;
+      --accent-hover: #C56843;
+      --accent-soft: #FBEEE6;
+      --accent-border: #F0D5C4;
+      --accent-strong: #A85533;
+      --border: #E5E4DC;
+      --border-strong: #CDCDC4;
+      --code-bg: #F5F2EC;
+      --code-text: #2A2A2A;
+      --info: #2563EB;
+      --info-soft: #EFF6FF;
+      --info-border: #BFDBFE;
+      --warn: #B45309;
+      --warn-soft: #FFFBEB;
+      --warn-border: #FDE68A;
+      --danger: #B91C1C;
+      --danger-soft: #FEF2F2;
+      --danger-border: #FECACA;
+      --success: #047857;
+      --success-soft: #ECFDF5;
+      --success-border: #A7F3D0;
+      --decision: #6D28D9;
+      --decision-soft: #F5F3FF;
+      --decision-border: #DDD6FE;
+      --shadow-sm: 0 1px 2px rgba(20, 14, 8, 0.04);
+      --shadow: 0 1px 2px rgba(20, 14, 8, 0.04), 0 4px 12px rgba(20, 14, 8, 0.06);
+      --shadow-lg: 0 8px 24px rgba(20, 14, 8, 0.10);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 16px;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans CJK SC', 'Noto Sans CJK JP', 'Noto Sans CJK KR', sans-serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+      --z-progress: 200;
+      --z-topbar: 100;
+      --z-drawer: 300;
+      --z-backdrop: 250;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1A1714;
+      --surface: #221E1A;
+      --surface-2: #2A2520;
+      --surface-3: #322C26;
+      --text: #F5F0E8;
+      --text-muted: #C8C0B6;
+      --text-subtle: #9A938A;
+      --accent: #E89572;
+      --accent-hover: #F2A87F;
+      --accent-soft: #3A2A22;
+      --accent-border: #5A3D2E;
+      --accent-strong: #F5B493;
+      --border: #2E2924;
+      --border-strong: #463F38;
+      --code-bg: #1E1B17;
+      --code-text: #E8E2D8;
+      --info: #93C5FD;
+      --info-soft: #1E2A3D;
+      --info-border: #2A4365;
+      --warn: #FBBF24;
+      --warn-soft: #332817;
+      --warn-border: #5C4520;
+      --danger: #FCA5A5;
+      --danger-soft: #3A1F1F;
+      --danger-border: #5C2A2A;
+      --success: #6EE7B7;
+      --success-soft: #1A3329;
+      --success-border: #1F5C45;
+      --decision: #C4B5FD;
+      --decision-soft: #2A1F40;
+      --decision-border: #4A3870;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.35);
+      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    ::selection { background: var(--accent-soft); color: var(--accent-strong); }
+
+    .skip-link {
+      position: absolute;
+      top: -100px; left: 8px;
+      padding: 10px 16px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      z-index: 1000;
+      transition: top 0.15s;
+    }
+    .skip-link:focus { top: 8px; }
+
+    .icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+    .icon { display: inline-block; flex-shrink: 0; vertical-align: middle; stroke: currentColor; fill: none; }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      width: 0;
+      background: var(--accent);
+      z-index: var(--z-progress);
+      transition: width 0.05s linear;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: var(--z-topbar);
+      background: rgba(250, 250, 247, 0.85);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    [data-theme="dark"] .topbar { background: rgba(26, 23, 20, 0.85); }
+    .topbar-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: var(--text);
+      font-size: 14px;
+    }
+    .brand-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+      animation: brand-pulse 2.8s ease-in-out infinite;
+    }
+    @keyframes brand-pulse {
+      0%, 100% { box-shadow: 0 0 0 4px var(--accent-soft); }
+      50%      { box-shadow: 0 0 0 7px transparent; }
+    }
+    .topbar-actions { display: flex; gap: 6px; align-items: center; }
+    .icon-btn {
+      width: 40px; height: 40px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s, background-color 0.15s;
+      padding: 0;
+    }
+    .icon-btn .icon { width: 18px; height: 18px; stroke-width: 2; }
+    .icon-btn[hidden] { display: none; }
+
+    .layout {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 48px;
+      padding: 32px 24px 96px;
+    }
+    .content { min-width: 0; }
+
+    .toc {
+      position: sticky;
+      top: 80px;
+      align-self: start;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+    .toc::-webkit-scrollbar { width: 6px; }
+    .toc::-webkit-scrollbar-track { background: transparent; }
+    .toc::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+    .toc-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 12px 12px;
+    }
+    .toc-title {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-subtle);
+      margin: 0;
+    }
+    .toc-close { display: none; }
+    .toc-nav { display: flex; flex-direction: column; gap: 2px; }
+    .toc-nav a {
+      display: flex; align-items: center;
+      min-height: 36px;
+      padding: 8px 14px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13.5px;
+      border-left: 2px solid transparent;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      transition: color 0.15s, background-color 0.15s, border-color 0.15s;
+      line-height: 1.4;
+    }
+    .toc-nav a.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      background: var(--accent-soft);
+      font-weight: 500;
+    }
+    .toc-nav a.lvl-3 { padding-left: 26px; font-size: 12.5px; }
+    .toc-backdrop {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: var(--z-backdrop);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .doc-header {
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .doc-eyebrow {
+      display: inline-flex; align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      border: 1px solid var(--accent-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+    }
+    .doc-title {
+      font-size: clamp(28px, 3vw + 16px, 40px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+      color: var(--text);
+      text-wrap: balance;
+    }
+    .doc-subtitle {
+      font-size: clamp(15px, 0.6vw + 13px, 18px);
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin: 0 0 20px;
+      max-width: 75ch;
+      text-wrap: pretty;
+    }
+    .doc-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--text-subtle);
+    }
+    .doc-meta-item { display: inline-flex; align-items: center; gap: 6px; }
+    .doc-meta .icon { width: 14px; height: 14px; stroke-width: 2; }
+
+    .content h1, .content h2, .content h3, .content h4 {
+      color: var(--text);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      scroll-margin-top: 80px;
+      text-wrap: balance;
+    }
+    .content h2 {
+      font-size: 26px;
+      font-weight: 600;
+      margin: 56px 0 16px;
+      padding-top: 8px;
+      position: relative;
+    }
+    .content h3 {
+      font-size: 19px;
+      font-weight: 600;
+      margin: 36px 0 12px;
+      position: relative;
+    }
+    .content h4 {
+      font-size: 13px;
+      font-weight: 600;
+      margin: 24px 0 8px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .content > p,
+    .content > ul,
+    .content > ol,
+    .content > blockquote { max-width: 75ch; }
+    .content p { margin: 0 0 16px; text-wrap: pretty; overflow-wrap: anywhere; }
+    .content a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-border); }
+    .content ul, .content ol { padding-left: 24px; margin: 0 0 16px; }
+    .content li { margin: 4px 0; }
+    .content strong { color: var(--text); font-weight: 600; }
+    .content em { color: var(--text-muted); }
+    .content hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    .anchor {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 24px; height: 24px;
+      margin-left: 6px;
+      color: var(--text-subtle);
+      opacity: 0;
+      transform: translateY(-1px);
+      transition: opacity 0.15s, color 0.15s;
+      border-bottom: none !important;
+      border-radius: var(--radius-sm);
+    }
+    .anchor .icon { width: 14px; height: 14px; stroke-width: 2; }
+
+    .compare {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .compare-card {
+      padding: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.18s, box-shadow 0.18s;
+      position: relative;
+    }
+    .compare-card.recommended { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+    .compare-card.recommended::before {
+      content: var(--rec-label, "★ Đề xuất");
+      position: absolute; top: -10px; right: 14px;
+      background: var(--accent); color: #fff;
+      padding: 2px 10px; border-radius: 999px;
+      font-size: 11px; font-weight: 600;
+    }
+    .compare-card h4 { margin: 0 0 8px; font-size: 15px; color: var(--text); text-transform: none; letter-spacing: normal; }
+    .compare-card p { margin: 0; color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+
+    .callout {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 14px;
+      padding: 14px 18px;
+      border-radius: var(--radius);
+      border: 1px solid;
+      margin: 20px 0;
+      font-size: 14.5px;
+      line-height: 1.6;
+      max-width: 75ch;
+    }
+    .callout-icon { width: 20px; height: 20px; margin-top: 2px; stroke-width: 2; }
+    .callout-body { min-width: 0; }
+    .callout-title { font-weight: 600; margin: 0 0 4px; font-size: 14px; }
+    .callout-body p:last-child { margin-bottom: 0; }
+    .callout-info     { background: var(--info-soft);     border-color: var(--info-border);     color: var(--text); }
+    .callout-info     .callout-title, .callout-info     .callout-icon { color: var(--info); }
+    .callout-success  { background: var(--success-soft);  border-color: var(--success-border);  color: var(--text); }
+    .callout-success  .callout-title, .callout-success  .callout-icon { color: var(--success); }
+
+    .highlight {
+      background: linear-gradient(135deg, var(--accent-soft), var(--surface-2));
+      border-left: 4px solid var(--accent);
+      padding: 18px 22px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 24px 0;
+      font-size: 16px;
+      line-height: 1.65;
+      max-width: 75ch;
+    }
+    .highlight-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-strong);
+      margin-bottom: 6px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 20px 0;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      max-width: 100%;
+    }
+    .content table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: var(--surface);
+      margin: 0;
+    }
+    .content > table {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 20px 0;
+      display: block;
+      overflow-x: auto;
+    }
+    .content th {
+      background: var(--surface-2);
+      color: var(--text);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .content td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+    .content tr:last-child td { border-bottom: none; }
+
+    details.collapsible {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin: 16px 0;
+      background: var(--surface);
+      overflow: hidden;
+    }
+    details.collapsible[open] { box-shadow: var(--shadow-sm); }
+    details.collapsible > summary {
+      cursor: pointer;
+      padding: 14px 18px;
+      font-weight: 500;
+      color: var(--text);
+      list-style: none;
+      display: flex; align-items: center; gap: 10px;
+      user-select: none;
+      transition: background 0.15s;
+      min-height: 44px;
+    }
+    details.collapsible > summary::-webkit-details-marker { display: none; }
+    details.collapsible > summary::before {
+      content: "›";
+      display: inline-block;
+      transition: transform 0.18s;
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 700;
+    }
+    details.collapsible[open] > summary::before { transform: rotate(90deg); }
+    .collapsible-body { padding: 4px 18px 18px; border-top: 1px solid var(--border); }
+
+    .doc-footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-subtle);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .doc-footer a { color: var(--accent); text-decoration: none; }
+
+    *:focus { outline: none; }
+    *:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+    .toc-nav a:focus-visible { outline-offset: -2px; }
+    .icon-btn:focus-visible { outline-offset: 2px; }
+    .anchor:focus-visible { opacity: 1; outline-offset: 2px; }
+
+    @media (hover: hover) {
+      .icon-btn:hover { color: var(--accent); border-color: var(--accent-border); background: var(--accent-soft); }
+      .toc-nav a:hover { color: var(--accent); background: var(--accent-soft); }
+      .content a:hover { color: var(--accent-hover); border-bottom-color: var(--accent); }
+      .compare-card:hover { border-color: var(--accent-border); box-shadow: var(--shadow); }
+      .compare-card.recommended:hover { border-color: var(--accent); }
+      .content tr:hover td { background: var(--surface-2); }
+      details.collapsible > summary:hover { background: var(--surface-2); }
+      .anchor:hover { color: var(--accent); }
+      .content h2:hover .anchor,
+      .content h3:hover .anchor { opacity: 1; }
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 20px 16px 80px;
+      }
+      .topbar-inner { padding: 8px 12px; }
+      .doc-header { margin-bottom: 28px; padding-bottom: 20px; }
+      .toc-mobile-trigger { display: inline-flex !important; }
+      .toc {
+        position: fixed;
+        top: 0; left: 0;
+        width: min(300px, 82vw);
+        height: 100dvh;
+        max-height: 100dvh;
+        background: var(--surface);
+        z-index: var(--z-drawer);
+        padding: 16px 8px 24px 16px;
+        box-shadow: var(--shadow-lg);
+        transform: translateX(-105%);
+        transition: transform 0.25s ease;
+      }
+      .toc-head { padding: 4px 4px 12px 8px; }
+      .toc-close {
+        display: inline-flex !important;
+        width: 36px; height: 36px;
+        align-items: center; justify-content: center;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: var(--radius-sm);
+        color: var(--text-muted);
+        cursor: pointer;
+        padding: 0;
+      }
+      .toc-close .icon { width: 18px; height: 18px; stroke-width: 2; }
+      body.toc-open .toc { transform: translateX(0); }
+      body.toc-open .toc-backdrop { display: block; opacity: 1; }
+      .toc-backdrop {
+        display: block;
+        opacity: 0;
+        pointer-events: none;
+      }
+      body.toc-open .toc-backdrop { pointer-events: auto; }
+      body.toc-open { overflow: hidden; }
+    }
+    @media (min-width: 901px) {
+      .toc-mobile-trigger { display: none !important; }
+    }
+
+    @media print {
+      .topbar, .toc, .toc-backdrop, .icon-btn, .anchor, .scroll-progress { display: none !important; }
+      .layout { grid-template-columns: 1fr; padding: 0; max-width: 100%; }
+      body { background: #fff; color: #000; }
+      a { color: #000; }
+      .doc-footer { break-before: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Bỏ qua menu</a>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+    <symbol id="i-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+    <symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  </svg>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <button class="icon-btn toc-mobile-trigger" id="toc-toggle" onclick="openToc()" aria-label="Mục lục" title="Mục lục">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-menu"/></svg>
+        </button>
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>Ý tưởng</span>
+      </div>
+      <div class="topbar-actions">
+        <button class="icon-btn" onclick="window.print()" title="In / Lưu PDF" aria-label="In / Lưu PDF">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-printer"/></svg>
+        </button>
+        <button class="icon-btn" id="theme-toggle" onclick="toggleTheme()" title="Đổi theme" aria-label="Đổi theme">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use id="theme-icon-use" href="#i-moon"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="toc-backdrop" onclick="closeToc()" aria-hidden="true"></div>
+
+  <div class="layout">
+    <aside class="toc" id="toc" aria-label="Mục lục">
+      <div class="toc-head">
+        <p class="toc-title">Mục lục</p>
+        <button class="toc-close" onclick="closeToc()" aria-label="Đóng">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+      <nav class="toc-nav" id="toc-nav">
+        <a href="#executive-summary" class="lvl-2">Executive Summary</a>
+        <a href="#bang-so-sanh-tong-quan-4-nuoc" class="lvl-2">Bảng so sánh tổng quan 4 nước</a>
+        <a href="#so-sanh-chien-luoc" class="lvl-2">So sánh chiến lược — 7 câu hỏi then chốt</a>
+        <a href="#so-sanh-van-hoa" class="lvl-2">So sánh văn hóa — ngôn ngữ — gu thiết kế</a>
+        <a href="#english-quote-bank" class="lvl-2">English Quote Bank</a>
+      </nav>
+    </aside>
+
+    <main class="content" id="main">
+      <header class="doc-header">
+        <span class="doc-eyebrow">BRAINSTORM</span>
+        <h1 class="doc-title">00 — Tổng Quan & So Sánh 4 Thị Trường Motorcycle POD Châu Âu</h1>
+        <p class="doc-subtitle">File MASTER của bộ tài liệu nghiên cứu thị trường Motorcycle/Biker POD châu Âu (Đức, Pháp, Thụy Điển, Hà Lan). Nền tảng: Mayzing POD. Niche: motorcycle/biker lifestyle.</p>
+        <div class="doc-meta">
+          <span class="doc-meta-item">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-file"/></svg>
+            00-TONG-QUAN-SO-SANH-4-NUOC.md
+          </span>
+          <span class="doc-meta-item">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-calendar"/></svg>
+            03/07/2026
+          </span>
+          <span class="doc-meta-item">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"/></svg>
+            ~50 phút đọc
+          </span>
+        </div>
+      </header>
+
+      <aside class="callout callout-info">
+        <svg class="callout-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-info"/></svg>
+        <div class="callout-body">
+          <p class="callout-title">Cách dùng</p>
+          <p>Đọc file này trước để nắm bức tranh tổng thể và quyết định chiến lược. Sau đó đọc file chi tiết từng nước (01-DUC, 02-PHAP, 03-THUY-DIEN, 04-HA-LAN) khi triển khai sâu từng thị trường. Ba nguyên tắc xuyên suốt: (1) Localize thắng generic — quote tiếng bản địa là lợi thế số 1; (2) Gift angle là bánh đà doanh thu — hướng tới persona người mua (vợ/con/cháu); (3) An toàn pháp lý trước, sáng tạo sau — không brand xe, không logo hãng.</p>
+        </div>
+      </aside>
+
+      <h2 id="executive-summary">Executive Summary</h2>
+
+      <h3>Kết luận trong 60 giây</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Quyết định</th>
+              <th>Trả lời</th>
+              <th>Lý do cốt lõi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nước test đầu tiên</strong></td>
+              <td><strong>ĐỨC</strong></td>
+              <td>Thị trường motorcycle lớn nhất EU (~5,07 triệu xe), văn hóa "Motorrad" ăn sâu, sức mua cao, Vatertag 14/5 là dịp gift khổng lồ</td>
+            </tr>
+            <tr>
+              <td><strong>Thứ tự ưu tiên</strong></td>
+              <td>Đức → Hà Lan → Pháp → Thụy Điển</td>
+              <td>Cân bằng giữa quy mô, độ dễ vào, chi phí test và seasonality</td>
+            </tr>
+            <tr>
+              <td><strong>Positioning</strong></td>
+              <td>Localized Motorcycle Quote + Gift hybrid</td>
+              <td>Quote bản địa hóa + góc quà tặng là tổ hợp có moat cao nhất</td>
+            </tr>
+            <tr>
+              <td><strong>Số design đầu</strong></td>
+              <td>30–50 design, tee trước</td>
+              <td>Đủ để test 5–7 angle × 2 ngôn ngữ (EN + DE)</td>
+            </tr>
+            <tr>
+              <td><strong>Cửa sổ vàng 2026</strong></td>
+              <td>Tháng 7–8 prep; Q4: Fars dag (8/11) + BF (27/11) + Christmas</td>
+              <td>Ngay từ hôm nay (03/07) vẫn kịp toàn bộ chuỗi Q4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="highlight">
+        <span class="highlight-label">Ý chính</span>
+        <p>Đức là thị trường phải thắng. Nếu chỉ được chọn 1 nước, chọn Đức. Hà Lan là "phòng thí nghiệm" lý tưởng (tiếng Anh ổn, giá rẻ). Thụy Điển có cơ hội độc quyền với Fars dag tháng 11. Pháp là "quả ngọt khó hái" — thị trường lớn thứ 2 nhưng localization phức tạp nhất.</p>
+      </div>
+
+      <h3>Tóm tắt bức tranh 4 nước</h3>
+
+      <p><strong>ĐỨC</strong> (~5,07 triệu xe): Thị trường motorcycle lớn nhất EU, rider trung bình 50+ tuổi, sức mua cao, văn hóa touring/garage mạnh. Vatertag (14/5) gắn chặt với hình ảnh biker dad. Rủi ro: Abmahnung (luật sư săn TM) cao nhất 4 nước.</p>
+
+      <p><strong>HÀ LAN</strong> (~721k xe): Thị trường nhỏ nhưng "dễ vào" — tiếng Anh gần như thông thạo toàn dân, CPM ads thấp hơn Đức. >50% chủ xe từ 50 tuổi trở lên. Là "phòng thí nghiệm" tốt để test quote tiếng Anh.</p>
+
+      <p><strong>PHÁP</strong> (~3,8–4 triệu 2RM, ~2,5 triệu moto): Thị trường thứ 2 về quy mô, văn hóa café racer/vintage đậm, Fête des Pères 21/6. Khó nhất về localization — tiếng Pháp phải chuẩn, humor phải tinh tế.</p>
+
+      <p><strong>THỤY ĐIỂN</strong> (~340k xe): Nhỏ nhất nhưng lợi thế riêng: sức mua cao, cạnh tranh POD thấp nhất, <strong>Fars dag 8/11</strong> rơi vào trước Black Friday (27/11) và Christmas. Mùa lái ngắn (May–Sep) tạo cảm xúc FOMO mạnh.</p>
+
+      <h2 id="bang-so-sanh-tong-quan-4-nuoc">Bảng so sánh tổng quan 4 nước</h2>
+
+      <div class="compare">
+        <div class="compare-card recommended">
+          <h4>🇩🇪 ĐỨC</h4>
+          <p><strong>Tiềm năng: 9,5/10</strong></p>
+          <p>5,07M xe • Touring/garage culture • Vatertag (14/5) = quốc lễ • Quote DE convert tốt • Abmahnung risk cao</p>
+        </div>
+        <div class="compare-card">
+          <h4>🇳🇱 HÀ LAN</h4>
+          <p><strong>Tiềm năng: 7,0/10</strong></p>
+          <p>721k xe • English fluent • CPM thấp • >50% chủ xe 50+ • Dad/grandpa angle mạnh</p>
+        </div>
+        <div class="compare-card">
+          <h4>🇫🇷 PHÁP</h4>
+          <p><strong>Tiềm năng: 7,5/10</strong></p>
+          <p>3,8–4M 2RM • Café racer/vintage mạnh • Tiếng Pháp bắt buộc • Localization phức tạp nhất</p>
+        </div>
+        <div class="compare-card">
+          <h4>🇸🇪 THỤY ĐIỂN</h4>
+          <p><strong>Tiềm năng: 6,0/10</strong></p>
+          <p>340k xe • Sức mua rất cao • Minimal/Scandinavian gu • Fars dag 8/11 độc quyền • Seasonality khắc nghiệt</p>
+        </div>
+      </div>
+
+      <h2 id="so-sanh-chien-luoc">So sánh chiến lược — 7 câu hỏi then chốt</h2>
+
+      <h3>3.1. Nước nào tiềm năng POD cao nhất? → ĐỨC</h3>
+
+      <p>Đức một mình lớn hơn 3 nước còn lại cộng lại về số motorcycle thuần (5,07tr vs ~3,5–3,7tr nếu trừ scooter Pháp). Quote tiếng Đức convert tốt hơn tiếng Anh rõ rệt trong niche này. Vatertag 14/5 là ngày nghỉ lễ toàn quốc với truyền thống đàn ông đi chơi cùng nhau — không nước nào Father's Day "to" như vậy. Bắt buộc check DPMA + EUIPO trước khi launch quote chủ lực tại Đức (Abmahnung — phí €800–2.000/thư).</p>
+
+      <h3>3.2. Nước nào hợp quote humor? → HÀ LAN (direct) + ĐỨC (khô)</h3>
+
+      <p>Hà Lan: Humor "nuchter" (tỉnh táo, trực diện) là mặc định văn hóa. Câu ngắn, thẳng, hơi xấc một cách dễ thương: "Elk weer is motorweer". Đức: Humor khô, chính xác, tự trào có logic — "Therapie? Nein danke, ich hab ein Motorrad". Pháp: Wordplay tiếng Pháp cực khó làm chuẩn nếu không phải native; humor Mỹ thô bị chê "lourd".</p>
+
+      <h3>3.3. Nước nào hợp vintage/minimal? → PHÁP (vintage) + THỤY ĐIỂN (minimal)</h3>
+
+      <p>Pháp: Quê hương thẩm mỹ café racer châu Âu — poster Art Deco/mid-century, serif thanh lịch, kem/đỏ đất/xanh navy. Design "French vintage poster" bán được ở Pháp CẢ KHI quote ngắn — vì người Pháp mua vì thẩm mỹ trước, thông điệp sau. Thụy Điển: Scandinavian minimal là mặc định — nhiều khoảng trắng, 1–2 màu, line art mảnh, không distressed bẩn.</p>
+
+      <h3>3.4. Nước nào hợp gift angle? → ĐỨC + HÀ LAN/PHÁP (hè), THỤY ĐIỂN (Q4 độc quyền)</h3>
+
+      <p>Gift là góc bán có AOV cao hơn (mua tặng ít mặc cả), CR cao hơn khi có deadline (ngày lễ). <strong>Điểm chiến lược ít người khai thác: Fars dag Thụy Điển 8/11</strong> — seller POD toàn cầu đã "hết pin" Father's Day từ tháng 6. Với chỉ 1 bộ design "Pappa/Farfar/Morfar + motorcykel" launch giữa tháng 10, ta có 3 tuần bán Fars dag, tái sử dụng ngay cho Black Friday (27/11) và Jul.</p>
+
+      <h3>3.5. Ba nguyên tắc xuyên suốt</h3>
+
+      <ol>
+        <li><strong>Localize thắng generic.</strong> Quote tiếng bản địa tự nhiên (không dịch máy) là lợi thế cạnh tranh số 1 vì 90% seller POD quốc tế chỉ chạy tiếng Anh. Mức cần localize: <strong>Pháp > Đức > Hà Lan > Thụy Điển</strong>.</li>
+        <li><strong>Gift angle là bánh đà doanh thu.</strong> Người mua thật thường là vợ/con/cháu của rider — không phải rider. Mọi collection, ads, pricing đều phải có phiên bản "mua tặng".</li>
+        <li><strong>An toàn pháp lý trước, sáng tạo sau.</strong> Không brand xe, không logo hãng, không 3-piece patch/1%er, không quote cổ vũ tốc độ hay rượu bia + lái xe. Check EUIPO trước khi launch quote chủ lực.</li>
+      </ol>
+
+      <h2 id="so-sanh-van-hoa">So sánh văn hóa — ngôn ngữ — gu thiết kế</h2>
+
+      <h3>Bảng humor style</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tiêu chí</th>
+              <th>🇩🇪 Đức</th>
+              <th>🇫🇷 Pháp</th>
+              <th>🇸🇪 Thụy Điển</th>
+              <th>🇳🇱 Hà Lan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Kiểu humor</strong></td>
+              <td>Khô, tự trào, logic lật ngược</td>
+              <td>Chơi chữ, mỉa mai tinh tế</td>
+              <td>Understated, tự giễu nhẹ</td>
+              <td>Direct, nuchter, thẳng thừng</td>
+            </tr>
+            <tr>
+              <td><strong>Chủ đề hài ăn khách</strong></td>
+              <td>Vợ vs xe, therapy vs xe, tuổi già + tốc độ chậm lại</td>
+              <td>Đam mê vs lý trí, "moto = tình nhân"</td>
+              <td>Mùa ngắn, thời tiết, chờ tháng 5</td>
+              <td>Thời tiết mưa, tuổi già, tiền đổ xe</td>
+            </tr>
+            <tr>
+              <td><strong>Điều tối kỵ</strong></td>
+              <td>Ngữ pháp sai; humor sến</td>
+              <td>Humor thô; tiếng Pháp lai căng</td>
+              <td>Khoe mẽ, "I'm the best" (phạm jantelagen)</td>
+              <td>Màu mè vòng vo; giả tạo</td>
+            </tr>
+            <tr>
+              <td><strong>Ví dụ chuẩn tông</strong></td>
+              <td>"Therapie? Nein danke, ich hab ein Motorrad."</td>
+              <td>"Papa motard, papa au top."</td>
+              <td>"Livet är kort. Säsongen är kortare."</td>
+              <td>"Elk weer is motorweer."</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Bảng gu visual</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Chiều</th>
+              <th>Đức</th>
+              <th>Pháp</th>
+              <th>Thụy Điển</th>
+              <th>Hà Lan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Style chủ đạo</strong></td>
+              <td>Rugged badge, emblem, distressed vừa phải</td>
+              <td>Vintage poster, café racer line art</td>
+              <td>Scandinavian minimal, line art mảnh</td>
+              <td>Bold typography, clean humor</td>
+            </tr>
+            <tr>
+              <td><strong>Bảng màu hợp</strong></td>
+              <td>Đen, xám đá, olive, cam gỉ sét</td>
+              <td>Kem, navy, đỏ bordeaux, vàng mù tạt</td>
+              <td>Đen, trắng, xám nhạt, xanh rêu nhạt (max 2 màu)</td>
+              <td>Đen, trắng, cam (quốc dân), navy</td>
+            </tr>
+            <tr>
+              <td><strong>Font hợp</strong></td>
+              <td>Sans condensed đậm, slab serif, stencil</td>
+              <td>Serif retro, script vintage</td>
+              <td>Sans nhẹ (thin/regular), grotesque hiện đại</td>
+              <td>Sans đậm chắc (Helvetica-esque)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Mức độ cần localize ngôn ngữ</h3>
+
+      <p><strong>Pháp (Bắt buộc ~90%):</strong> Chỉ giữ EN cho style vintage thuần visual; mọi quote/description/ads bằng FR chuẩn native.</p>
+
+      <p><strong>Đức (Rất nên ~70%):</strong> Quote chủ lực DE; giữ 30% EN cho persona trẻ + style quốc tế.</p>
+
+      <p><strong>Hà Lan (Nên ~40–50%):</strong> EN chạy tốt, nhưng quote NL ("opa", thời tiết) tạo khác biệt.</p>
+
+      <p><strong>Thụy Điển (Tùy chọn ~30–40%):</strong> EN hoàn toàn ổn; quote SV dùng cho gift angle + cảm xúc mùa.</p>
+
+      <h2 id="english-quote-bank">English Quote Bank</h2>
+
+      <details class="collapsible">
+        <summary>Click để mở Quote Bank (180 quotes — Funny, Biker Dad, Grandpa, Touring, Garage Life, Café Racer, Retirement)</summary>
+        <div class="collapsible-body">
+          <p>File nguồn chứa 180 quotes tiếng Anh được phân loại thành 7 category:</p>
+          <ul>
+            <li><strong>Funny Motorcycle (30 quotes):</strong> "Two wheels, zero regrets", "My bike heard that", "I brake for twisty roads", v.v.</li>
+            <li><strong>Biker Dad (30 quotes):</strong> "Dad. Rider. Legend.", "Best dads ride motorcycles", "This dad runs on two wheels", v.v.</li>
+            <li><strong>Biker Grandpa (30 quotes):</strong> "Grandpa. Rider. Still cool.", "Grandpas who ride stay young", "Grandpa's rocking chair has two wheels", v.v.</li>
+            <li><strong>Touring Rider (25 quotes):</strong> "Borders are just photo stops", "Passport, panniers, no plans", "Collecting mountain passes since forever", v.v.</li>
+            <li><strong>Garage Life (25 quotes):</strong> "The garage is my living room", "Oil stains are garage tattoos", "Fixing one thing, finding three more", v.v.</li>
+            <li><strong>Café Racer / Vintage (20 quotes):</strong> "Ride classics, live classic", "Old bikes, honest miles", "Espresso, then the long way", v.v.</li>
+            <li><strong>Retirement Biker (20 quotes):</strong> "Retirement plan: ride everywhere", "Officially retired, permanently riding", "I don't retire. I re-tire.", v.v.</li>
+          </ul>
+          <p><strong>Cách dùng:</strong> Tất cả quotes đều dùng được toàn EU (EN ổn cho NL/SE; để localize thành DE/FR sau). Mỗi quote có ghi "Tiềm năng" (H/M/L) để ưu tiên test. Kiểm EUIPO trước khi launch quote chủ lực — nhiều cụm đã phổ biến (⚠️ đánh dấu trong bảng).</p>
+        </div>
+      </details>
+
+      <aside class="callout callout-success">
+        <svg class="callout-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-success"/></svg>
+        <div class="callout-body">
+          <p class="callout-title">Đã hoàn thành</p>
+          <p>File bộ 4 nước chi tiết (01-DUC, 02-PHAP, 03-THUY-DIEN, 04-HA-LAN) đã sẵn sàng. File này là MASTER — dùng để nắm tổng thể trước khi đi sâu từng nước. Các phần còn lại (6. Visual Style, 7. Color Master, 8. Seasonality Calendar, 9. Ads Angles, 10. Pricing, 11. Collections, 12. Brand Positioning, 13. Risk Analysis, 14. Action Plan, 15. KẾT LUẬN THỰC CHIẾN) có trong file chi tiết từng nước.</p>
+        </div>
+      </aside>
+
+      <footer class="doc-footer">
+        <span>Tạo bằng <a href="#">md2html</a></span>
+        <span>Nguồn: 00-TONG-QUAN-SO-SANH-4-NUOC.md</span>
+      </footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script>
+    const STORAGE_KEY = "md2html-theme";
+    function currentTheme() { return document.documentElement.dataset.theme || "light"; }
+    function applyThemeIcon() {
+      const use = document.getElementById("theme-icon-use");
+      if (use) use.setAttribute("href", currentTheme() === "dark" ? "#i-sun" : "#i-moon");
+    }
+    (function restoreTheme() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) document.documentElement.dataset.theme = saved;
+    })();
+
+    function toggleTheme() {
+      const next = currentTheme() === "light" ? "dark" : "light";
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem(STORAGE_KEY, next);
+      applyThemeIcon();
+    }
+
+    function openToc()  { document.body.classList.add("toc-open"); }
+    function closeToc() { document.body.classList.remove("toc-open"); }
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape" && document.body.classList.contains("toc-open")) closeToc();
+    });
+
+    function setupTocSpy() {
+      const links = document.querySelectorAll("#toc-nav a[href^='#']");
+      if (!links.length) {
+        const toc = document.getElementById("toc");
+        if (toc) toc.style.display = "none";
+        return;
+      }
+      const map = new Map();
+      links.forEach(a => {
+        const id = a.getAttribute("href").slice(1);
+        const el = document.getElementById(id);
+        if (el) map.set(el, a);
+        a.addEventListener("click", () => {
+          if (window.matchMedia("(max-width: 900px)").matches) closeToc();
+        });
+      });
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          const link = map.get(en.target);
+          if (!link) return;
+          if (en.isIntersecting) {
+            links.forEach(l => l.classList.remove("active"));
+            link.classList.add("active");
+          }
+        });
+      }, { rootMargin: "-80px 0px -70% 0px", threshold: 0 });
+      map.forEach((_, el) => obs.observe(el));
+    }
+
+    function injectAnchors() {
+      document.querySelectorAll(".content h2[id], .content h3[id]").forEach(h => {
+        if (h.querySelector(".anchor")) return;
+        const a = document.createElement("a");
+        a.className = "anchor";
+        a.href = "#" + h.id;
+        a.setAttribute("aria-label", "Permalink");
+        a.innerHTML = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-link"/></svg>';
+        h.appendChild(a);
+      });
+    }
+
+    function setupScrollProgress() {
+      const bar = document.getElementById("scroll-progress");
+      if (!bar) return;
+      const onScroll = () => {
+        const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const p = h > 0 ? (document.documentElement.scrollTop / h * 100) : 0;
+        bar.style.width = p + "%";
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      applyThemeIcon();
+      injectAnchors();
+      setupTocSpy();
+      setupScrollProgress();
+    });
+  </script>
+</body>
+</html>
